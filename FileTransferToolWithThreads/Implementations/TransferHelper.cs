@@ -69,7 +69,7 @@ namespace FileTransferToolWithThreads.Implementations
         private string ComputeMD5Hash(byte[] data)
         {
             byte[] hash = MD5.HashData(data);
-            return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+            return Convert.ToHexString(hash).ToLowerInvariant();
         }
 
         private string ComputeSHA256Hash(string filePath)
